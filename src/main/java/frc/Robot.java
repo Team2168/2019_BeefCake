@@ -9,6 +9,7 @@ package frc;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -17,12 +18,11 @@ import frc.subsystems.CargoIntakeWheels;
 import frc.subsystems.Drivetrain;
 import frc.subsystems.HatchIntakeWheels;
 import frc.subsystems.Pivot;
+import frc.subsystems.VacuumClimberLift;
+import frc.subsystems.VacuumClimberPump;
 import frc.utils.Debouncer;
 import frc.utils.PowerDistribution;
 import frc.utils.consoleprinter.ConsolePrinter;
-
-import edu.wpi.first.wpilibj.Timer;
-
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -37,6 +37,10 @@ public class Robot extends TimedRobot {
   public static CargoIntakeWheels cargoIntakeWheels;
   public static HatchIntakeWheels hatchIntakeWheels;
   public static Drivetrain drivetrain;
+
+  //climber
+  public static VacuumClimberLift vacuumClimberLift;
+  public static VacuumClimberPump vacuumClimberPump;
 
   //PDP instance
   public static PowerDistribution pdp;
@@ -74,12 +78,16 @@ public class Robot extends TimedRobot {
     ConsolePrinter.init();
     ConsolePrinter.setRate(RobotMap.CONSOLE_PRINTER_LOG_RATE_MS);
 
-    oi = OI.getInstance();
+    
     drivetrain = Drivetrain.getInstance();
     pivot = Pivot.getInstance();
     cargoIntakeWheels = CargoIntakeWheels.getInstance();
     hatchIntakeWheels = HatchIntakeWheels.getInstance();
     pdp = new PowerDistribution(RobotMap.PDPThreadPeriod);
+
+    vacuumClimberLift = VacuumClimberLift.getInstance();
+    vacuumClimberPump = VacuumClimberPump.getInstance();
+    oi = OI.getInstance();
 
     
     drivetrain.calibrateGyro();

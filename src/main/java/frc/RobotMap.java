@@ -44,13 +44,16 @@ public class RobotMap {
 	*                         PDP/CAN DEVICES                                 *
     *************************************************************************/
     
-    public static final int PLUNGER_PIVOT_MOTOR_PDP = 0; //TODO set
-    public static final int DRIVETRAIN_RIGHT_MOTOR_1_PDP = 1; 
-    public static final int DRIVETRAIN_LEFT_MOTOR_1_PDP = 2;
-    public static final int CARGO_INTAKE_WHEELS_LEFT_PDP = 3;
+    public static final int PLUNGER_PIVOT_MOTOR_PDP = 10; //TODO set
+    public static final int DRIVETRAIN_RIGHT_MOTOR_1_PDP = 11; 
+    public static final int DRIVETRAIN_LEFT_MOTOR_1_PDP = 12;
+    public static final int CARGO_INTAKE_WHEELS_LEFT_PDP = 13;
     public static final int CARGO_INTAKE_WHEELS_RIGHT_PDP = 4;
     public static final int HATCH_INTAKE_WHEELS_PDP = 5;
     public static final int COMPRESSOR_PDP = 6;
+    public static final int CLIMBER_LIFT_MOTOR_1_PDP = 0;
+    public static final int CLIMBER_LIFT_MOTOR_2_PDP = 1;
+    public static final int CLIMBER_PUMP_MOTOR_PDP = 2;
     
 
     
@@ -101,6 +104,15 @@ public class RobotMap {
     public static final boolean CARGO_INTAKE_LEFT_REVERSE = false;
     public static final boolean CARGO_INTAKE_RIGHT_REVERSE = false;
     public static final boolean HATCH_INTAKE_WHEELS_REVERSE = false;
+
+    /*************************************************************************
+	*                         VACUUM CLIMBER PARAMETERS                      *
+    *************************************************************************/
+
+    public static final boolean CLIMBER_LIFT_MOTOR_1_REVERSE = false;
+    public static final boolean CLIMBER_LIFT_MOTOR_2_REVERSE = true;
+    public static final boolean CLIMBER_PUMP_MOTOR_REVERSE = false;
+    
 
     /*************************************************************************
      *                         PDP PARAMETERS                                *

@@ -7,8 +7,8 @@
 
 package frc;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
+import frc.commands.vacuumClimberLift.DriveVacuumClimberLiftWithConstant;
+import frc.commands.vacuumClimberPump.DriveVacuumClimberPumpWithConstant;
 import frc.utils.F310;
 import frc.utils.LinearInterpolator;
 
@@ -40,6 +40,11 @@ public class OI {
 
         gunStyleInterpolator = new LinearInterpolator(gunStyleArray);
 
+        operatorJoystick.ButtonA().whenPressed(new DriveVacuumClimberLiftWithConstant(0.5));
+        operatorJoystick.ButtonA().whenReleased(new DriveVacuumClimberLiftWithConstant(0.0));
+        operatorJoystick.ButtonB().whenPressed(new DriveVacuumClimberPumpWithConstant(1.0));
+        operatorJoystick.ButtonB().whenReleased(new DriveVacuumClimberPumpWithConstant(0.0));
+
     }
 
     /**
@@ -68,6 +73,11 @@ public class OI {
     public double getHatchIntakeJoystickValue()
     {
         return -operatorJoystick.getLeftTriggerAxisRaw() + operatorJoystick.getRightTriggerAxisRaw();
+    }
+
+    public double getVacuumClimberLiftJoystickValue()
+    {
+        return operatorJoystick.getRightStickRaw_Y();
     }
 
     /*************************************************************************
