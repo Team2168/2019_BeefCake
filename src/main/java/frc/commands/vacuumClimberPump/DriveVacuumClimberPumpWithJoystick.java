@@ -5,16 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.commands.vacuumClimberLift;
+package frc.commands.vacuumClimberPump;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.Robot;
 
-public class DriveVacuumClimberLiftWIthJoysticks extends Command {
-  public DriveVacuumClimberLiftWIthJoysticks() {
+public class DriveVacuumClimberPumpWithJoystick extends Command {
+  public DriveVacuumClimberPumpWithJoystick() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.vacuumClimberLift);
+    requires(Robot.vacuumClimberPump);
   }
 
   // Called just before this Command runs the first time
@@ -25,7 +25,7 @@ public class DriveVacuumClimberLiftWIthJoysticks extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.vacuumClimberLift.driveClimberLiftMotors(Robot.oi.getVacuumClimberLiftJoystickValue()); 
+    Robot.vacuumClimberPump.driveClimberPumpMotor(Robot.oi.getVacuumClimberPumpJoystickValue());
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -37,7 +37,7 @@ public class DriveVacuumClimberLiftWIthJoysticks extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.vacuumClimberLift.driveClimberLiftMotors(0.0);
+    Robot.vacuumClimberPump.driveClimberPumpMotor(0.0);
   }
 
   // Called when another command which requires one or more of the same
