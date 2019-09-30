@@ -19,6 +19,7 @@ import frc.subsystems.Drivetrain;
 import frc.subsystems.HatchIntakeWheels;
 import frc.subsystems.Pivot;
 import frc.subsystems.VacuumClimberLift;
+import frc.subsystems.VacuumClimberLift2;
 import frc.subsystems.VacuumClimberPump;
 import frc.utils.Debouncer;
 import frc.utils.PowerDistribution;
@@ -41,6 +42,9 @@ public class Robot extends TimedRobot {
   //climber
   public static VacuumClimberLift vacuumClimberLift;
   public static VacuumClimberPump vacuumClimberPump;
+
+  //practice climber
+  public static VacuumClimberLift2 vacuumClimberLift2;
 
   //PDP instance
   public static PowerDistribution pdp;
@@ -87,6 +91,7 @@ public class Robot extends TimedRobot {
 
     vacuumClimberLift = VacuumClimberLift.getInstance();
     vacuumClimberPump = VacuumClimberPump.getInstance();
+    vacuumClimberLift2 = VacuumClimberLift2.getInstance();
     oi = OI.getInstance();
 
     

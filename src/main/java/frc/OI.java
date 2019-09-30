@@ -80,6 +80,11 @@ public class OI {
         return -operatorJoystick.getRightStickRaw_Y(); //invert so pushing up goes up
     }
 
+    public double getVacuumClimberLift2JoystickValue()
+    {
+        return -operatorJoystick.getRightStickRaw_Y();
+    }
+
     public double getVacuumClimberPumpJoystickValue()
     {
         return operatorJoystick.getLeftStickRaw_Y();
